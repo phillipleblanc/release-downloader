@@ -212,7 +212,7 @@ async function downloadFile(
 
   if (response.message.statusCode !== 200) {
     const err: Error = new Error(
-      `Unexpected response: ${response.message.statusCode}`
+      `Unexpected response: ${response.message.statusCode} ${response.message.statusMessage}`
     )
     throw err
   }
