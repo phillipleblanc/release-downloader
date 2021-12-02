@@ -2,13 +2,17 @@ import * as fs from "fs"
 import * as path from "path"
 import * as core from "@actions/core"
 import * as io from "@actions/io"
-import * as thc from "typed-rest-client/HttpClient"
+import * as thc from "@phillipleblanc/typed-rest-client/HttpClient"
 import {IReleaseDownloadSettings} from "./download-settings"
 import {GithubRelease, DownloadMetaData} from "./gh-api"
-import {IHeaders} from "typed-rest-client/Interfaces"
+import {IHeaders} from "@phillipleblanc/typed-rest-client/Interfaces"
 
 const API_ROOT = "https://api.github.com/repos"
-const httpClient: thc.HttpClient = new thc.HttpClient("gh-api-client")
+const httpClient: thc.HttpClient = new thc.HttpClient(
+  "gh-api-client",
+  undefined,
+  {removeHeadersOnRedirect: ["Authorization"]}
+)
 
 export async function download(
   _downloadSettings: IReleaseDownloadSettings
