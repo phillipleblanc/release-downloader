@@ -3637,6 +3637,7 @@ function downloadFile(asset, outputPath, token) {
             headers["Authorization"] = `token ${token}`;
         }
         core.info(`Downloading file: ${asset.fileName} to: ${outputPath}`);
+        core.info(`Downloading file from: ${asset.url}`);
         const response = yield httpClient.get(asset.url, headers);
         if (response.message.statusCode !== 200) {
             const err = new Error(`Unexpected response: ${response.message.statusCode} ${response.message.statusMessage}`);
