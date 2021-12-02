@@ -208,6 +208,7 @@ async function downloadFile(
   }
 
   core.info(`Downloading file: ${asset.fileName} to: ${outputPath}`)
+  core.info(`Downloading file from: ${asset.url}`)
   const response = await httpClient.get(asset.url, headers)
 
   if (response.message.statusCode !== 200) {
