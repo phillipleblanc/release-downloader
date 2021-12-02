@@ -3639,7 +3639,7 @@ function downloadFile(asset, outputPath, token) {
         core.info(`Downloading file: ${asset.fileName} to: ${outputPath}`);
         const response = yield httpClient.get(asset.url, headers);
         if (response.message.statusCode !== 200) {
-            const err = new Error(`Unexpected response: ${response.message.statusCode}`);
+            const err = new Error(`Unexpected response: ${response.message.statusCode} ${response.message.statusMessage}`);
             throw err;
         }
         const outFilePath = path.resolve(outputPath, asset.fileName);
