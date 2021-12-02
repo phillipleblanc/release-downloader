@@ -29,11 +29,11 @@
   "dependencies": {
     "@actions/core": "^1.5.0",
     "@actions/io": "^1.1.1",
-    "typed-rest-client": "^1.8.5"
+    "@phillipleblanc/typed-rest-client": "^1.8.6"
   },
   "devDependencies": {
-    "@types/node": "^16.7.1",
     "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.1",
     "@typescript-eslint/parser": "^3.10.1",
     "@zeit/ncc": "^0.22.3",
     "eslint": "^7.32.0",
